@@ -1,0 +1,24 @@
+---
+interface Props {
+    class?: string;
+    imgLogo: string;
+    link: string;
+}
+
+const { imgLogo, link } = Astro.props;
+---
+
+<div
+    class={`
+        ${Astro.props.class}
+        w-14  md:w-24 h-29 m-auto col-span- relative rounded-xl
+        `}
+>
+    <a href={link} target="_blank"> 
+        <img
+            src={imgLogo}
+            alt="imagen logo de clientes"
+            class="grayscale w-auto max-h-20 hover:grayscale-0 ease-in duration-200 cursor-pointer"
+        />
+    </a>
+</div>

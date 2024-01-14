@@ -1,0 +1,77 @@
+---
+
+import Button from "./Button.astro"
+
+const { currentLocale } = Astro
+
+---
+
+<header id="header-nav" class="fixed top-0 z-50 w-full px-6 py-2">
+  <div class="w-full max-w-[1400px] m-auto  mx-auto flex lg:px-12 items-center justify-between">
+    <div class="flex flex-grow basis-0">
+      <a href="/" class="bg-white p-1 rounded-md">
+        <img class="h-auto w-24 lg:w-32" src="/Isotipo.webp" />
+      </a>
+    </div>
+
+    <!-- Menú de navegación para pantallas grandes -->
+    <nav
+      class="hidden md:flex flex-grow basis-0 w-full gap-x-8 text-lg md:justify-center font-medium"
+    >
+      <a class=" text-white" href="/info">Servicios</a>
+      <a class=" text-white" href="/info">Nosotros</a>
+      <a class=" text-white" href="/info">Clientes</a>
+    </nav>
+
+    <!-- Botón de menú para pantallas pequeñas -->
+    <button
+      id="menu-toggle"
+      class="flex flex-grow basis-0 justify-end text-2xl md:hidden z-50"
+    >
+      <span id="menu-icon" style="margin: auto 0;">☰</span>
+    </button>
+
+    <div
+      class="hidden md:flex-grow md:basis-0 justify-end whitespace-nowrap md:flex md:text-base"
+    >
+      <Button
+        class="md:text-sm lg:text-base md:py-2"
+      >
+        Contactanos
+      </Button>
+    </div>
+  </div>
+
+  <!-- Menú de navegación móvil para pantallas pequeñas -->
+  <nav
+    id="mobile-menu"
+    class="bg-black/80 backdrop-blur-3xl hidden w-full flex-col items-center text-center text-2xl fixed top-0 left-0 right-0 h-dvh place-content-center"
+  >
+    <a class="my-4 text__glowing text-white" href="/info">Servicios</a>
+    <a class="my-4 text__glowing text-white" href="/info">Nosotros</a>
+    <a class="my-4 text__glowing text-white" href="/info">Clientes</a>
+    <Button
+      class="my-4 whitespace-nowrap text-center lg:hidden lg:text-base"
+    >
+      Contactanos
+    </Button>
+  </nav>
+</header>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menu-toggle")
+    const mobileMenu = document.getElementById("mobile-menu")
+    const menuIcon = document.getElementById("menu-icon")
+
+    if (!menuToggle || !mobileMenu || !menuIcon) {
+      return
+    }
+
+    menuToggle.addEventListener("click", function () {
+      mobileMenu.classList.toggle("hidden")
+      mobileMenu.classList.toggle("flex")
+      menuIcon.textContent = menuIcon.textContent === "☰" ? "✕" : "☰"
+    })
+  })
+</script>
