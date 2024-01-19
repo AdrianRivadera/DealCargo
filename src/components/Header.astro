@@ -10,7 +10,7 @@ const { currentLocale } = Astro
   <div class="w-full max-w-[1400px] m-auto  mx-auto flex lg:px-12 items-center justify-between">
     <div class="flex flex-grow basis-0">
       <a href="/" class="bg-white p-1 rounded-md">
-        <img class="h-auto w-24 lg:w-32" src="/Isotipo.webp" />
+        <img class="h-auto w-24 lg:w-32" src="/Isotipo.webp" alt="Logo Deal Cargo"/>
       </a>
     </div>
 
@@ -18,9 +18,9 @@ const { currentLocale } = Astro
     <nav
       class="hidden md:flex flex-grow basis-0 w-full gap-x-8 text-lg md:justify-center font-medium"
     >
-      <a class=" text-white" href="/info">Servicios</a>
-      <a class=" text-white" href="/info">Nosotros</a>
-      <a class=" text-white" href="/info">Clientes</a>
+      <a class=" text-white" href="#Servicios" aria-label="Sección servicios">Servicios</a>
+      <a class=" text-white" href="#Nosotros" aria-label="Sección Nosotros">Nosotros</a>
+      <a class=" text-white" href="#Clientes" aria-label="Sección Clientes">Clientes</a>
     </nav>
 
     <!-- Botón de menú para pantallas pequeñas -->
@@ -34,11 +34,11 @@ const { currentLocale } = Astro
     <div
       class="hidden md:flex-grow md:basis-0 justify-end whitespace-nowrap md:flex md:text-base"
     >
-      <Button
-        class="md:text-sm lg:text-base md:py-2"
+      <a
+        class="md:text-sm lg:text-base md:py-2 md:px-4 text-white border-2 rounded-2xl font-semibold" href="#Contactanos" aria-label="Contactanos" 
       >
         Contactanos
-      </Button>
+      </a>
     </div>
   </div>
 
@@ -47,14 +47,14 @@ const { currentLocale } = Astro
     id="mobile-menu"
     class="bg-black/80 backdrop-blur-3xl hidden w-full flex-col items-center text-center text-2xl fixed top-0 left-0 right-0 h-dvh place-content-center"
   >
-    <a class="my-4 text__glowing text-white" href="/info">Servicios</a>
-    <a class="my-4 text__glowing text-white" href="/info">Nosotros</a>
-    <a class="my-4 text__glowing text-white" href="/info">Clientes</a>
-    <Button
-      class="my-4 whitespace-nowrap text-center lg:hidden lg:text-base"
+    <a class="my-4 text__glowing text-white" href="#Servicios" aria-label="Sección servicios">Servicios</a>
+    <a class="my-4 text__glowing text-white" href="#Nosotros" aria-label="Sección Nosotros">Nosotros</a>
+    <a class="my-4 text__glowing text-white" href="#Clientes" aria-label="Sección Clientes">Clientes</a>
+    <a
+      class="my-4 whitespace-nowrap text-center lg:hidden lg:text-base" href="#Contactanos" aria-label="Contactanos" 
     >
       Contactanos
-    </Button>
+    </a>
   </nav>
 </header>
 

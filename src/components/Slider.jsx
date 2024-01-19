@@ -56,11 +56,11 @@ export default (props) => {
   return (
     <>
       {/* carousel */}
-      <div className="slideC">
+      <div className="slideC  h-auto">
         {props.data.map((item, i) => (
           <React.Fragment key={item.id}>
             <div
-              className="slide w-96	h-96 "
+              className="slide w-96	h-96"
               style={{
                 background: item.bgColor,
                 ...getStyles(i)
@@ -74,18 +74,32 @@ export default (props) => {
       </div>
       {/* carousel */}
 
-      <div className="btns">
+      <div className="btns flex justify-center">
         <button
-          className="btn bg-gray-200 rounded-full p-1 hover:bg-gray-400 ease-in duration-200"
+          className="btn bg-gray-200 rounded-full  hover:bg-gray-300 ease-in duration-200"
           onClick={prev}
         >
-          <svg class="icon icon-tabler icon-tabler-arrow-narrow-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 12l14 0" /><path d="M5 12l4 4" /><path d="M5 12l4 -4" /></svg></button>
+          <div className="flex justify-center items-center gap-1.5 py-2 px-4">
+            <svg class="icon icon-tabler icon-tabler-arrow-narrow-left " width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 12l14 0" /><path d="M5 12l4 4" /><path d="M5 12l4 -4" /></svg>
+            <span className="m-0 text-stone-900 font-medium">Anterior</span>
+          </div>
+
+
+        </button>
+
+
         <button
-          className="btn bg-gray-200 rounded-full p-1 hover:bg-gray-400 ease-in duration-200"
+          className="btn bg-gray-200 rounded-full  hover:bg-gray-300 ease-in duration-200"
           onClick={next}
-        ><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-narrow-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 12l14 0" /><path d="M15 16l4 -4" /><path d="M15 8l4 4" /></svg></button>
+        >
+          <div className="flex justify-center flex-row-reverse gap-1.5 py-2 px-4">
+            <svg  class="icon icon-tabler icon-tabler-arrow-narrow-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 12l14 0" /><path d="M15 16l4 -4" /><path d="M15 8l4 4" /></svg>
+            <span className="m-0 text-stone-900 font-medium">Siguiente</span>
+          </div>
+        </button>
+
       </div>
-      
+
     </>
   );
 };
