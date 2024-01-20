@@ -60,7 +60,7 @@ export default (props) => {
         {props.data.map((item, i) => (
           <React.Fragment key={item.id}>
             <div
-              className="slide w-96	h-96"
+              className="slide w-20	h-96"
               style={{
                 background: item.bgColor,
                 ...getStyles(i)
