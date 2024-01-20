@@ -56,11 +56,11 @@ export default (props) => {
   return (
     <>
       {/* carousel */}
-      <div className="slideC  h-auto">
+      <div className="slideC  h-auto overflow-hidden lg:overflow-visible">
         {props.data.map((item, i) => (
           <React.Fragment key={item.id}>
             <div
-              className="slide w-20	h-96"
+              className="slide w-96 h-96 "
               style={{
                 background: item.bgColor,
                 ...getStyles(i)
@@ -74,7 +74,7 @@ export default (props) => {
       </div>
       {/* carousel */}
 
-      <div className="btns flex justify-center">
+      <div className="btns flex justify-center gap-x-4 my-4">
         <button
           className="btn bg-gray-200 rounded-full  hover:bg-gray-300 ease-in duration-200"
           onClick={prev}
