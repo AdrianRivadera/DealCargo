@@ -8,6 +8,7 @@ export default (props) => {
 
   const prev = () => activeSlide > 0 && setactiveSlide(activeSlide - 1);
 
+
   const getStyles = (index) => {
     if (activeSlide === index)
       return {
@@ -53,6 +54,8 @@ export default (props) => {
       };
   };
 
+
+
   return (
     <>
       {/* carousel */}
@@ -60,7 +63,7 @@ export default (props) => {
         {props.data.map((item, i) => (
           <React.Fragment key={item.id}>
             <div
-              className="slide w-96 h-96 "
+              className="slide w-96 h-96"
               style={{
                 background: item.bgColor,
                 ...getStyles(i)
@@ -75,28 +78,63 @@ export default (props) => {
       {/* carousel */}
 
       <div className="btns flex justify-center gap-x-4 my-4">
-        <button
-          className="btn bg-gray-200 rounded-full  hover:bg-gray-300 ease-in duration-200"
-          onClick={prev}
-        >
-          <div className="flex justify-center items-center gap-1.5 py-2 px-4">
-            <svg class="icon icon-tabler icon-tabler-arrow-narrow-left " width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 12l14 0" /><path d="M5 12l4 4" /><path d="M5 12l4 -4" /></svg>
-            <span className="m-0 text-stone-900 font-medium">Anterior</span>
-          </div>
 
 
-        </button>
+        {
+          activeSlide === 0 ? (
+
+            <button
+              className="btn bg-gray-200 rounded-full  ease-in duration-200 opacity-35"
+              onClick={prev}
+              disabled
+            >
+              <div className="flex justify-center items-center gap-1.5 py-2 px-4">
+                <svg class="icon icon-tabler icon-tabler-arrow-narrow-left " width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 12l14 0" /><path d="M5 12l4 4" /><path d="M5 12l4 -4" /></svg>
+                <span className="m-0 text-stone-900 font-medium">Anterior</span>
+              </div>
 
 
-        <button
-          className="btn bg-gray-200 rounded-full  hover:bg-gray-300 ease-in duration-200"
-          onClick={next}
-        >
-          <div className="flex justify-center flex-row-reverse gap-1.5 py-2 px-4">
-            <svg  class="icon icon-tabler icon-tabler-arrow-narrow-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 12l14 0" /><path d="M15 16l4 -4" /><path d="M15 8l4 4" /></svg>
-            <span className="m-0 text-stone-900 font-medium">Siguiente</span>
-          </div>
-        </button>
+            </button>
+
+          ) :
+            <button
+              className="btn bg-gray-200 rounded-full  hover:bg-gray-300 ease-in duration-200"
+              onClick={prev}
+            >
+              <div className="flex justify-center items-center gap-1.5 py-2 px-4">
+                <svg class="icon icon-tabler icon-tabler-arrow-narrow-left " width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 12l14 0" /><path d="M5 12l4 4" /><path d="M5 12l4 -4" /></svg>
+                <span className="m-0 text-stone-900 font-medium">Anterior</span>
+              </div>
+
+
+            </button>
+        }
+
+
+        {
+          activeSlide === 3 ? (
+            <button
+              className="btn bg-gray-200 rounded-full ease-in duration-200 opacity-35"
+              onClick={next}
+              disabled
+            >
+              <div className="flex justify-center flex-row-reverse gap-1.5 py-2 px-4">
+                <svg class="icon icon-tabler icon-tabler-arrow-narrow-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 12l14 0" /><path d="M15 16l4 -4" /><path d="M15 8l4 4" /></svg>
+                <span className="m-0 text-stone-900 font-medium">Siguiente</span>
+              </div>
+            </button>
+          ) :
+            <button
+              className="btn bg-gray-200 rounded-full  hover:bg-gray-300 ease-in duration-200"
+              onClick={next}
+            >
+              <div className="flex justify-center flex-row-reverse gap-1.5 py-2 px-4">
+                <svg class="icon icon-tabler icon-tabler-arrow-narrow-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M5 12l14 0" /><path d="M15 16l4 -4" /><path d="M15 8l4 4" /></svg>
+                <span className="m-0 text-stone-900 font-medium">Siguiente</span>
+              </div>
+            </button>
+        }
+
 
       </div>
 
@@ -119,7 +157,7 @@ const SliderContent = (props) => {
 
       </div>
 
-      <p className="text-center text-stone-700 text-md text-pretty">{props.desc}</p>
+      <p className="text-center text-stone-700 text-md text-pretty px-1">{props.desc}</p>
     </div>
   );
 };

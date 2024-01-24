@@ -26,7 +26,7 @@ export default [
     title: "Mauricio Imaz",
     subtitle:"Gerente General - Fasten",
     desc:
-      "Desde su contratación en el año 2022. Nos ha prestado un servicio de excelencia, resolviendo en lo inmediato, anticipando para optimizar nuestras tomas de decisiones, y siempre con una presencia y comunicación Profesional. Trabajar con Deal Cargo marcó un antes y un después en nuestra operatoria.”"
+      "Nos ha prestado un servicio de excelencia, resolviendo en lo inmediato, anticipando para optimizar nuestras tomas de decisiones, y siempre con una presencia y comunicación Profesional. Trabajar con Deal Cargo marcó un antes y un después en nuestra operatoria.”"
   },
   {
     id: 4,
