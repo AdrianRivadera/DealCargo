@@ -58,6 +58,12 @@ export default (props) => {
 
   return (
     <>
+          <div 
+        className="rounded-full w-72 h-72  absolute blur-2xl"
+        style={{left: '40%' ,  backgroundColor: '#AA2A2A'} }
+      >
+
+      </div>
       {/* carousel */}
       <div className="slideC  h-auto overflow-hidden lg:overflow-visible">
         {props.data.map((item, i) => (
@@ -137,6 +143,8 @@ export default (props) => {
 
 
       </div>
+
+
 
     </>
   );
