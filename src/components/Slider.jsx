@@ -59,8 +59,8 @@ export default (props) => {
   return (
     <>
           <div 
-        className="rounded-full w-72 h-72  absolute blur-2xl"
-        style={{left: '40%' ,  backgroundColor: '#AA2A2A'} }
+        className="hidden lg:block rounded-full w-72 h-72  absolute blur-2xl"
+        style={{left: '52%' ,  backgroundColor: '#AA2A2A'} }
       >
 
       </div>
