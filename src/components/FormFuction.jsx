@@ -1,26 +1,19 @@
-import { useRef, useState, useEffect } from 'react';
-import emailjs from '@emailjs/browser';
+import { useRef, useState } from 'react'
+import emailjs from '@emailjs/browser'
 import ApiKey from '../ApiKey';
-import ReCAPTCHA from "react-google-recaptcha";
+
 
 export const FormFunction = () => {
-    const refForm = useRef();
-    const [botonEnviar, setBotonEnviar] = useState("Enviar Formulario");
 
-    useEffect(() => {
-        // Acciones que deseas realizar después de que el componente se monte
-        console.log('Componente FormFunction montado');
-    }, []);
+    const refForm = useRef()
+
+    const [botonEnviar, setBotonEnviar] = useState("Enviar Formulario");
 
     const cambiarTextoBoton = () => {
         setBotonEnviar("¡Formulario enviado!");
     };
 
-    const onChange = () => {
-        console.log('Captcha válido!');
-        document.getElementById('botonEnvio').removeAttribute('disabled');
-        document.getElementById('botonEnvio').style.visibility = 'visible';
-    };
+
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -41,7 +34,7 @@ export const FormFunction = () => {
                 console.log(error);
             }
         );
-    };
+    }
 
     return (
         <div>
@@ -63,15 +56,34 @@ export const FormFunction = () => {
                     <textarea maxLength="500" name='message' type='email' id='consulta' required className='rounded-md h-24 p-2' />
                 </fieldset>
 
-                <div className='w-full mt-10  flex justify-between'>
-                    {/* <ReCAPTCHA 
-                        className="captcha"
-                        sitekey="6Ld61E4mAAAAAAGw68YoZayXagefAZsS_gq_STk4"
-                        onChange={onChange}
-                    /> */}
-                    <button className='text-white bg-red-900 py-2 px-4 rounded-md  hover:bg-red-800 duration-300 ' style={{ backgroundColor: "#AA2A2A;" }} id='' disabled>{botonEnviar}</button>
+                <div className='w-full mt-10  flex justify-center lg:justify-end'>
+
+                    {botonEnviar === "Enviar Formulario" ? (
+                        <button
+                            className='w-full font-medium lg:w-auto text-white py-2 px-4 rounded-md hover:bg-red-800 duration-300'
+                            style={{ backgroundColor: "#AA2A2A;" }}
+                            id=''
+                            onClick={handleSubmit}  // Add this line if you want to handle the click event
+                        >
+                            {botonEnviar}
+                        </button>
+                    ) : (
+                        <button
+                            className='w-full font-medium lg:w-auto text-white py-2 px-4 rounded-md hover:bg-red-800 duration-300'
+                            style={{ backgroundColor: "#4CBB17" }}
+                            id=''
+                        >
+                            <div className='flex justify-center items-center gap-x-2'>
+                                <svg x="0px" y="0px" width="30" height="30" viewBox="0 0 48 48">
+                                    <path fill="#c8e6c9" d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"></path>
+                                    <path fill="#4caf50" d="M34.586,14.586l-13.57,13.586l-5.602-5.586l-2.828,2.828l8.434,8.414l16.395-16.414L34.586,14.586z"></path>
+                                </svg>
+                                <span className='m-auto'>{botonEnviar}</span>
+                            </div>
+                        </button>
+                    )}
                 </div>
             </form>
         </div>
-    );
-};
+    )
+}
