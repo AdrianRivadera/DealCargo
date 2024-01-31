@@ -4,7 +4,7 @@ import Button from "./Button.astro";
 const { currentLocale } = Astro;
 ---
 
-<!-- <header id="header-nav" class="fixed top-0 z-50 w-full px-6 py-2">
+<header id="header-nav" class="fixed top-0 z-50 w-full px-6 py-2">
   <div
     class="w-full max-w-[1400px] m-auto mx-auto flex lg:px-12 items-center justify-between"
   >
@@ -19,7 +19,7 @@ const { currentLocale } = Astro;
     </div>
 
     <!-- Menú de navegación para pantallas grandes -->
-    <!-- <nav
+    <nav
       class="hidden md:flex flex-grow basis-0 w-full gap-x-8 text-lg md:justify-center font-medium"
     >
       <a class="text-white" href="#Servicios" aria-label="Sección servicios"
@@ -31,10 +31,10 @@ const { currentLocale } = Astro;
       <a class="text-white" href="#Clientes" aria-label="Sección Clientes"
         >Clientes</a
       >
-    </nav> -->
+    </nav>
 
     <!-- Botón de menú para pantallas pequeñas -->
-    <!-- <button
+    <button
       id="menu-toggle"
       class="flex flex-grow basis-0 justify-end text-2xl md:hidden z-50"
     >
@@ -52,10 +52,10 @@ const { currentLocale } = Astro;
         Contactanos
       </a>
     </div>
-  </div> -->
+  </div>
 
   <!-- Menú de navegación móvil para pantallas pequeñas -->
-  <!-- <nav
+  <nav
     id="mobile-menu"
     class="bg-black/80 backdrop-blur-3xl hidden w-full flex-col items-center text-center text-2xl fixed top-0 left-0 right-0 h-dvh place-content-center"
   >
@@ -82,31 +82,42 @@ const { currentLocale } = Astro;
       Contactanos
     </a>
   </nav>
-</header> -->
+</header>
 
 <script>
-  // document.addEventListener("DOMContentLoaded", function () {
-  //   const menuToggle = document.getElementById("menu-toggle");
-  //   const mobileMenu = document.getElementById("mobile-menu");
-  //   const menuIcon = document.getElementById("menu-icon");
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const menuIcon = document.getElementById("menu-icon");
 
-  //   if (!menuToggle || !mobileMenu || !menuIcon) {
-  //     return;
-  //   }
 
-  //   function toggleMobileMenu() {
-  //     mobileMenu.classList.toggle("hidden");
-  //     mobileMenu.classList.toggle("flex");
-  //     menuIcon.textContent = menuIcon.textContent === "☰" ? "✕" : "☰";
-  //   }
+    if (!menuToggle || !mobileMenu || !menuIcon) {
+      console.error("Alguno de los elementos no se ha encontrado.");
+      return;
+    }
 
-  //   menuToggle.addEventListener("click", toggleMobileMenu);
 
-  //   // Agregar el mismo manejador de eventos a otros botones
-  //   const botones = document.querySelectorAll(".boton-menu");
+    function toggleMobileMenu() {
 
-  //   botones.forEach(function (boton) {
-  //     boton.addEventListener("click", toggleMobileMenu);
-  //   });
-  // });
+      if (mobileMenu) {
+        mobileMenu.classList.toggle("hidden");
+        mobileMenu.classList.toggle("flex");
+      }
+
+
+      if (menuIcon) {
+        menuIcon.textContent = menuIcon.textContent === "☰" ? "✕" : "☰";
+      }
+    }
+
+
+    menuToggle.addEventListener("click", toggleMobileMenu);
+
+
+    const menuButtons = document.querySelectorAll(".boton-menu");
+
+    menuButtons.forEach(function (button) {
+      button.addEventListener("click", toggleMobileMenu);
+    });
+  });
 </script>
