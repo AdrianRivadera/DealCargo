@@ -15,25 +15,32 @@ export const FormFunction = () => {
 
 
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
 
-        emailjs.sendForm(
-            ApiKey.SERVICE_ID,
-            ApiKey.TEMPLATE_ID,
-            refForm.current,
-            ApiKey.USER_ID
-        ).then(
-            (result) => {
-                cambiarTextoBoton();
-                document.getElementById("usuarioNombre").value = '';
-                document.getElementById("usuarioMail").value = '';
-                document.getElementById("consulta").value = '';
-            },
-            (error) => {
-                console.log(error);
-            }
-        );
+    const handleSubmit = (event) => {
+
+        if (document.getElementById("usuarioNombre").value == "" || document.getElementById("usuarioMail").value == "" || document.getElementById("consulta").value == "") {
+            
+        } else {
+            event.preventDefault();
+
+            emailjs.sendForm(
+                ApiKey.SERVICE_ID,
+                ApiKey.TEMPLATE_ID,
+                refForm.current,
+                ApiKey.USER_ID
+            ).then(
+                (result) => {
+                    cambiarTextoBoton();
+                    document.getElementById("usuarioNombre").value = '';
+                    document.getElementById("usuarioMail").value = '';
+                    document.getElementById("consulta").value = '';
+                },
+                (error) => {
+                    console.log(error);
+                }
+            );
+        }
+
     }
 
     return (
