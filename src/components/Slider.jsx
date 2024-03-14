@@ -118,7 +118,7 @@ export default (props) => {
 
 
         {
-          activeSlide === 3 ? (
+          activeSlide === 4 ? (
             <button
               className="btn bg-gray-200 rounded-full ease-in duration-200 opacity-35"
               onClick={next}

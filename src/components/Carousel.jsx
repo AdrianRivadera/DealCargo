@@ -9,7 +9,7 @@ function Carousel() {
   return (
     <>
       <div className="center mt-20 mb-10">
-        <Slider data={data} activeSlide={1}  />
+        <Slider data={data} activeSlide={2}  />
       </div>
     </>
   )
