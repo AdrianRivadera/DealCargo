@@ -26,7 +26,7 @@ export default [
     title: "Lic. Manuel Ignacio Aispuro",
     subtitle:"Cámara Argentina de Comercio y Servicios",
     desc:
-      "Destaco el profesionalismo y dedicación con la que trabajan en Deal Cargo. Fue un placer que participaran en las capacitaciones de Pymes al Mundo, por el compromiso con el que las asumieron y la calidad de sus presentaciones. Y lo más importante, son excelentes personas.”"
+      "Destaco el profesionalismo y dedicación de Deal Cargo. Fue un placer que participaran en las capacitaciones de Pymes al Mundo, por el compromiso y calidad de sus presentaciones. Y lo más importante, son excelentes personas.”"
   },
   {
     id: 4,
@@ -35,7 +35,7 @@ export default [
     title: "Mauricio Imaz",
     subtitle:"Gerente General - Fasten",
     desc:
-      "Nos ha prestado un servicio de excelencia, resolviendo en lo inmediato, anticipando para optimizar nuestras tomas de decisiones, y siempre con una presencia y comunicación Profesional. Trabajar con Deal Cargo marcó un antes y un después en nuestra operatoria.”"
+      "Nos ha prestado un servicio de excelencia, resolviendo en lo inmediato, anticipando para optimizar nuestras tomas de decisiones, con una presencia y comunicación Profesional. Trabajar con Deal Cargo marcó un antes y un después en nuestra operatoria.”"
   },
   {
     id: 5,
