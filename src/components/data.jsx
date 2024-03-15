@@ -46,5 +46,23 @@ export default [
     desc:
       "La capacidad que tiene el equipo de Deal Cargo para interpretar los cambios y regulaciones que van surgiendo día a día nos permite enfocarnos mejor en nuestro negocio."
   },
+  {
+    id: 5,
+    bgColor: "#ffff",
+    icon:"/Powercom.webp",
+    title: "Carlos Kocsis",
+    subtitle:"Gerente de Operaciones - Powercom S.A",
+    desc:
+      "La capacidad que tiene el equipo de Deal Cargo para interpretar los cambios y regulaciones que van surgiendo día a día nos permite enfocarnos mejor en nuestro negocio."
+  },
+  {
+    id: 5,
+    bgColor: "#ffff",
+    icon:"/Powercom.webp",
+    title: "Carlos Kocsis",
+    subtitle:"Gerente de Operaciones - Powercom S.A",
+    desc:
+      "La capacidad que tiene el equipo de Deal Cargo para interpretar los cambios y regulaciones que van surgiendo día a día nos permite enfocarnos mejor en nuestro negocio."
+  }
 
 ];

@@ -149,4 +149,19 @@ const { description , title } = Astro.props;
 		50%  { transform: translate(0, 15px); }
 		100%   { transform: translate(0, -0px); }    
 	}
+
+	.decoration-underline{
+		background: 
+		linear-gradient(to right, rgb(255, 255, 255), rgb(255, 255, 255)),
+		linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 0, 0, 1), rgba(255, 0, 0, 1));
+		background-size: 100% 0.1em, 0 0.1em;
+		background-position: 100% 100%, 0 100%;
+		background-repeat: no-repeat;
+		transition: background-size 400ms;
+	}
+
+	.decoration-underline:hover,
+	.decoration-underline:focus {
+		background-size: 0 0.1em, 100% 0.1em;
+	}
 </style>
