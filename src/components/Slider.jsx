@@ -69,7 +69,7 @@ export default (props) => {
         {props.data.map((item, i) => (
           <React.Fragment key={item.id}>
             <div
-              className="slide w-96 h-96"
+              className="slide w-96  h-96"
               style={{
                 background: item.bgColor,
                 ...getStyles(i)
@@ -118,7 +118,7 @@ export default (props) => {
 
 
         {
-          activeSlide === 4 ? (
+          activeSlide === 5 ? (
             <button
               className="btn bg-gray-200 rounded-full ease-in duration-200 opacity-35"
               onClick={next}
@@ -157,15 +157,15 @@ const SliderContent = (props) => {
       <img
         src={props.icon}
         alt="img-marca"
-        className="w-20 m-auto"
+        className="w-16 lg:w-20 m-auto"
       />
       <div className="my-4 flex flex-col	items-center">
         <p className="m-auto font-medium text-stone-900 text-md text-pretty ">{props.title}</p>
-        <span className="font text-stone-700 text-md text-pretty">{props.subtitle}</span>
+        <span className="font text-stone-700 text-sm text-pretty">{props.subtitle}</span>
 
       </div>
 
-      <p className="text-center text-stone-700 text-md text-pretty px-1">{props.desc}</p>
+      <p className="text-center text-stone-700 text-md text-pretty  px-6 lg:px-1">{props.desc}</p>
     </div>
   );
 };
