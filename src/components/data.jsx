@@ -55,6 +55,15 @@ export default [
     desc:
       "Demostraron ser un excelente complemento para el área de COMEX, siempre muy profesionales realizando un gran trabajo y solucionando los contratiempos que se nos presentan a los importadores, con gran compromiso para realizar las tareas que el Departamento requiere."
   },
+  {
+    id: 7,
+    bgColor: "#ffff",
+    icon:"/Opiniones-AlphaStore.webp",
+    title: "Lucas Di Napoli",
+    subtitle:"Titular - Alpha Store SR.L",
+    desc:
+      "Desde el primer contacto, Deal Cargo se ha destacado por su profesionalismo, compromiso y atención a cada detalle, adaptándose a nuestras necesidades y manteniéndonos bien informados en todo momento. Un servicio de calidad."
+  }
 
 
 ];
